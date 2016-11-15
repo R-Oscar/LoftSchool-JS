@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+	<script>
+		mocha.setup('bdd');
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+	<script>
+		let assert = chai.assert;
+		let expect = chai.expect;
+	</script>
+	<script src="http://sinonjs.org/releases/sinon-1.7.1.js"></script>
+	<title>LoftSchool: Homework 3.1</title>
+</head>
+<body>
+	<script src="app.js"></script>
+	<script src="test.js"></script>
+
+	<div id="mocha"></div>
+	<script>
+		mocha.run();
+	</script>
+</body>
+</html>
