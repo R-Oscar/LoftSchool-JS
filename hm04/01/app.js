@@ -1,5 +1,5 @@
 function prepend(container, element) {
-	container.insertBefore(element, container.firstElementChild);
+	container.insertBefore(element, container.firstChild);
 }
 
 let container = document.getElementsByClassName("container")[0];
