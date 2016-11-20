@@ -2,7 +2,7 @@
 
 function forEach(array, fn) {
 	for (let i = 0; i < array.length; i++) {
-		if (array[i] != undefined)
+		if (array[i] != null)
 			fn(array[i], i, array);
 	}
 }
