@@ -36,13 +36,21 @@ console.log(deepEqual(objA, objB)); //объекты идентичны, вер�
 
 function deepEqual(obj1, obj2) {
 	let props = Object.getOwnPropertyNames(obj1);
+    debugger;
 
 	for (let i = 0; i < props.length; i++) {
 		let prop = props[i];
 		if (!obj2.hasOwnProperty(prop)) return false;
 		if (obj1[prop] !== obj2[prop]) {
 			if (typeof obj1[prop] === 'object' && typeof obj2[prop] === 'object') {
-				if (!deepEqual(obj1[prop], obj2[prop])) return false;
+                if (obj1[prop] !== null && obj2[prop] !== null)
+                    if (obj1[prop] instanceof Date && obj2[prop] instanceof Date) {
+                        if (obj1[prop].getTime() !== obj2[prop].getTime()) return false;
+                    } else if (Array.isArray(obj1[prop]) && Array.isArray(obj2[prop])) {
+                        if (!isEqual(obj1[prop], obj2[prop])) return false;
+                    } else {
+				        if (!deepEqual(obj1[prop], obj2[prop])) return false;
+                    }
 			} else {
 				return false;
 			}
@@ -50,4 +58,18 @@ function deepEqual(obj1, obj2) {
 	}
 
 	return true;
+}
+
+function isEqual(array1, array2) {
+    if (array1.length != array2.length) return false;
+    for (let i = 0; i < array1.length; i++) {
+        if (array1[i] !== array2[i])
+            if (typeof array1[i] == 'object' && typeof array2[i] == 'object') {
+                if (array1[i] !== null && array2[i] !== null)
+                    if (!deepEqual(array1[i], array2[i])) return false;
+            } else {
+                return false;
+            }
+    }
+    return true;
 }
