@@ -1,0 +1,31 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: 'Fira Sans', sans-serif;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.main-button {
+	outline: none;
+	border: none;
+	background: #ff8663;
+	box-shadow: 0px 3px 0px #ee7552;
+	line-height: 50px;
+	padding: 0 10px;
+	color: #fff;
+	font-family: inherit;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 36px;
+	text-transform: uppercase;
+}
+
+.main-button:active {
+	transform: translateY(1px);
+	box-shadow: 0px 2px 0px #ee7552;
+}
