@@ -1,0 +1,51 @@
+body {
+	margin: 0;
+	font-family: 'Fira Sans', sans-serif;
+}
+
+ul {
+	list-style-type: none;
+	margin: 10px auto;
+	width: 20%;
+}
+
+.acco__item {
+	width: 100%;
+	line-height: 42px;
+	padding: 0 20px;
+	margin: 2.5px 0;
+	border-radius: 21px;
+	cursor: pointer;
+	position: relative;
+}
+
+.acco__item:nth-of-type(odd) {
+	background: #696666;
+	color: #ffffff;
+}
+
+.acco__item:nth-of-type(even) {
+	background: #e7e7e7;
+	color: #4f4f4f;
+}
+
+.acco__item:hover {
+	background: #ff8663;
+	color: #fff;
+}
+
+.acco__item__inner {
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
+    background: #e7e7e7;
+    color: #4f4f4f;
+    top: 0px;
+    left: 0;
+    border-radius: 21px;
+    padding-top: 42px;
+    margin-top: -42px;
+    display: none;
+    transition-property: display;
+    transition-duration: 3s;
+}
